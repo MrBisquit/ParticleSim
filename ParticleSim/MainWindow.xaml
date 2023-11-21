@@ -1,0 +1,47 @@
+﻿<Window x:Class="ParticleSim.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ParticleSim"
+        mc:Ignorable="d"
+        Title="ParticleSim - wtdawson.info - By William :)" Height="450" Width="800"
+        Loaded="Window_Loaded">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Menu Grid.Row="0">
+            <MenuItem Header="Particles">
+                <MenuItem Header="Spawn particles">
+                    <MenuItem Header="Gas"></MenuItem>
+                    <MenuItem Header="Liquid"></MenuItem>
+                    <MenuItem Header="Solid"></MenuItem>
+                    <MenuItem Header="Ice cream (No Ice Cream for you)" IsEnabled="False"></MenuItem>
+                    <MenuItem Header="Plasma (No clue how it works)" IsEnabled="False"></MenuItem>
+                </MenuItem>
+            </MenuItem>
+        </Menu>
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <Image Grid.Column="0" Name="Main"></Image>
+            <Image Grid.Column="1" Name="Particle"></Image>
+        </Grid>
+
+        <Rectangle Grid.Row="2" Margin="3" Fill="LightGray" RadiusX="5" RadiusY="5"></Rectangle>
+        <Grid Grid.Row="2" Margin="3">
+            <WrapPanel Margin="3">
+                <Button>Run</Button>
+                <Label Name="ParticlesCount">Particles:</Label>
+            </WrapPanel>
+        </Grid>
+    </Grid>
+</Window>
